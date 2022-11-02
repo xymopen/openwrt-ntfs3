@@ -10,14 +10,17 @@ include $(INCLUDE_DIR)/package.mk
 
 define KernelPackage/fs-ntfs3
     SUBMENU:=Filesystems
-    TITLE:=Ntfs3 support
+    TITLE:=NTFS filesystem read & write (new driver) support
     FILES:=$(PKG_BUILD_DIR)/ntfs3.ko
     DEPENDS:=+kmod-nls-base @LINUX_5_10
     AUTOLOAD:=$(call AutoLoad,80,ntfs3)
 endef
 
 define KernelPackage/fs-ntfs3/description
-    Kernel module for new NTFS3 filesystem support
+    Kernel module for fully functional NTFS filesystem support. It allows
+    reading as well as writing.
+
+    It supports NTFS versions up to 3.1.
 endef
 
 define Build/Compile
