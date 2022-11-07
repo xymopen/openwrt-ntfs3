@@ -23,12 +23,3 @@
 -
  	return ntfs_get_acl_ex(inode, type, 0);
  }
-
-@@ -635,7 +632,7 @@ static int ntfs_xattr_get_acl(struct user_namespace *mnt_userns,
- 		return -EOPNOTSUPP;
- 	}
-
--	acl = ntfs_get_acl(inode, type, false);
-+	acl = ntfs_get_acl(inode, type);
- 	if (IS_ERR(acl))
- 		return PTR_ERR(acl);
