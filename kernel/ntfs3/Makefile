@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=ntfs3
-PKG_VERSION:=5.15.72
+PKG_VERSION:=5.15.77
 PKG_RELEASE:=$(AUTORELEASE)
 PKG_LICENSE:=GPL-2.0
 
