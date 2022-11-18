@@ -9,7 +9,7 @@ This feed backports [Ntfs3 driver](https://www.kernel.org/doc/html/v5.15/filesys
 Add the feed to the end of `feeds.conf`:
 
 ```
-src-git ntfs3 https://github.com/xymopen/openwrt-ntfs3
+src-git ntfs3 https://github.com/xymopen/openwrt-ntfs3;fixes-for-big-endian-systems
 ```
 
 If `feeds.conf` doesn't exist, copy `feeds.conf.default` and reanme it to `feeds.conf`.
