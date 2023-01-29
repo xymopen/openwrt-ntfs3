@@ -51,7 +51,7 @@
 
 --- a/inode.c
 +++ b/inode.c
-@@ -1168,7 +1168,7 @@ out:
+@@ -1177,7 +1177,7 @@ out:
  	return ERR_PTR(err);
  }
 
@@ -60,7 +60,7 @@
  				struct inode *dir, struct dentry *dentry,
  				const struct cpu_str *uni, umode_t mode,
  				dev_t dev, const char *symname, u32 size,
-@@ -1285,7 +1285,7 @@ struct inode *ntfs_create_inode(struct user_namespace *mnt_userns,
+@@ -1294,7 +1294,7 @@ struct inode *ntfs_create_inode(struct user_namespace *mnt_userns,
  		goto out3;
  	}
  	inode = &ni->vfs_inode;
@@ -69,7 +69,7 @@
  	mode = inode->i_mode;
 
  	inode->i_atime = inode->i_mtime = inode->i_ctime = ni->i_crtime =
-@@ -1584,7 +1584,7 @@ struct inode *ntfs_create_inode(struct user_namespace *mnt_userns,
+@@ -1593,7 +1593,7 @@ struct inode *ntfs_create_inode(struct user_namespace *mnt_userns,
 
  #ifdef CONFIG_NTFS3_FS_POSIX_ACL
  	if (!S_ISLNK(mode) && (sb->s_flags & SB_POSIXACL)) {
@@ -175,7 +175,7 @@
  				struct inode *dir, struct dentry *dentry,
  				const struct cpu_str *uni, umode_t mode,
  				dev_t dev, const char *symname, u32 size,
-@@ -837,17 +837,17 @@ int ntfs_cmp_names_cpu(const struct cpu_str *uni1, const struct le_str *uni2,
+@@ -840,17 +840,17 @@ int ntfs_cmp_names_cpu(const struct cpu_str *uni1, const struct le_str *uni2,
  /* globals from xattr.c */
  #ifdef CONFIG_NTFS3_FS_POSIX_ACL
  struct posix_acl *ntfs_get_acl(struct inode *inode, int type);
@@ -199,7 +199,7 @@
  extern const struct xattr_handler *ntfs_xattr_handlers[];
 --- a/super.c
 +++ b/super.c
-@@ -1439,7 +1439,7 @@ static struct file_system_type ntfs_fs_type = {
+@@ -1440,7 +1440,7 @@ static struct file_system_type ntfs_fs_type = {
  	.init_fs_context	= ntfs_init_fs_context,
  	.parameters		= ntfs_fs_parameters,
  	.kill_sb		= kill_block_super,
