@@ -1,3 +1,7 @@
+## Deprecated
+
+Ntfs3 is included in OpenWrt 23.05
+
 # Ntfs3 driver backport to OpenWrt 22.03
 
 ## Description
